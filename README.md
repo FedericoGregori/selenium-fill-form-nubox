@@ -20,7 +20,7 @@ For other SO, it can be downloaded from: https://chromedriver.chromium.org/
 
 ## Features
 
--   To handle every case different, you only need to modify the constants in the code
+To handle every case different, you only need to modify the constants in the code
 
 ```python
 PATH: str = "./chromedriver"
@@ -36,9 +36,9 @@ UPLOAD_FILE_ABSOLUTE_PATH: str = (
 )
 ```
 
-PATH: Relative path of the webdriver.
-NAME: The name is going to be used in the form + field detail, e.g. FedeTest1 Direction or FedeTest1 LastName.
-PROD_SELECT: A Dict with the product category and the specified product to choose (to get the value is needed to inspect the options values from the selection input field).
-UPLOAD_FILE_ABSOLUTE_PATH: Absolute path of the file to be used as attached document in case of Electronic Invoice category product. The project includes a Nubox invoice pdf and the file uploaded has no constraints at the time of this project initial version.
+-   PATH: Relative path of the webdriver.
+-   NAME: The name is going to be used in the form + field detail, e.g. FedeTest1 Direction or FedeTest1 LastName.
+-   PROD_SELECT: A Dict with the product category and the specified product to choose (to get the value is needed to inspect the options values from the selection input field).
+-   UPLOAD_FILE_ABSOLUTE_PATH: Absolute path of the file to be used as attached document in case of Electronic Invoice category product. The project includes a Nubox invoice pdf and the file uploaded has no constraints at the time of this project initial version.
 
 > The script starts a browser that goes until the previous to the last step of a new sale.
