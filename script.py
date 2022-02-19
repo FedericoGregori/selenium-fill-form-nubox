@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.service import Service
 import chile_rut
 
 PATH: str = "./chromedriver"
-NAME: str = "FedeTest1"
+NAME: str = "Test"
 URL: str = "https://nubox-staging-4270885.dev.odoo.com/"
 # 1: Contabilidad
 # 2: Factura Electrónica
