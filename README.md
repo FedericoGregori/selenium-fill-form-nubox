@@ -21,7 +21,7 @@ For other SO, it can be downloaded from: https://chromedriver.chromium.org/
 > `Be sure the python environment is active before run the script.py python file.`
 
 ```sh
-(venv) path/workspace$ python script.py
+(venv) <path>/selenium-fill-form-nubox$ python script.py
 ```
 
 ## Features
