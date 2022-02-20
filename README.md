@@ -18,6 +18,12 @@ For other SO, it can be downloaded from: https://chromedriver.chromium.org/
 -   You can check your Google Chrome version in [Options (three dots at the left upper section of Chrome] -> [Help] -> [About Google Chrome].
 -   This project started with Version 98.0.4758.102 (Official Build) (arm64).
 
+> `Be sure the python environment is active before run the script.py python file.`
+
+```sh
+python script.py
+```
+
 ## Features
 
 To handle every case different, you only need to modify the constants in the code
@@ -48,4 +54,4 @@ SHORT_WAIT: int = 2
 
 > `Sometimes the RUT validations return invalid because of Odoo RUT validation logic, just restart the script.`
 
--   The script starts a browser that goes until the user document id step of a new sale.
+-   The script starts a browser that goes until the last page of MercadoPago payment for a new sale.
