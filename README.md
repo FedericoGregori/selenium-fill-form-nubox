@@ -34,13 +34,17 @@ PROD_SELECT: dict = {"1": "2311", "2": "2420"}
 UPLOAD_FILE_ABSOLUTE_PATH: str = (
     "/Users/fede/workspace/selenium-fill-form-nubox/ING-_2022_0070.pdf"
 )
+
+LONG_WAIT: int = 10
+MEDIUM_WAIT: int = 5
+SHORT_WAIT: int = 2
 ```
 
 -   PATH: Relative path of the webdriver.
 -   NAME: The name is going to be used in the form + field detail, e.g. FedeTest1 Direction or FedeTest1 LastName.
 -   PROD_SELECT: A Dict with the product category and the specified product to choose (to get the value is needed to inspect the options values from the selection input field).
 -   UPLOAD_FILE_ABSOLUTE_PATH: Absolute path of the file to be used as attached document in case of Electronic Invoice category product. The project includes a Nubox invoice pdf and the file uploaded has no constraints at the time of this project initial version.
-
+-   LONG_WAIT, MEDIUM_WAIT, SHORT_WAIT are used to handle the page loading times, in case the script doesn't found an element (the element should be visible), it will stop with an error.
 
 > `Sometimes the RUT validations return invalid because of Odoo RUT validation logic, just restart the script.`
 

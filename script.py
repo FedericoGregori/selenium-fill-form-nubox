@@ -18,6 +18,10 @@ UPLOAD_FILE_ABSOLUTE_PATH: str = (
     "/Users/fede/workspace/selenium-fill-form-nubox/ING-_2022_0070.pdf"
 )
 
+LONG_WAIT: int = 10
+MEDIUM_WAIT: int = 5
+SHORT_WAIT: int = 2
+
 # Browser
 options = Options()
 options.add_experimental_option("detach", True)
@@ -29,12 +33,12 @@ driver.get(URL)
 # Navigate to partner form page
 # Click services button
 # id="services"
-time.sleep(4)
+time.sleep(MEDIUM_WAIT)
 services_button = driver.find_element("id", "services")
 services_button.click()
 
 for categ_id, product in PROD_SELECT.items():
-    time.sleep(1)
+    time.sleep(SHORT_WAIT)
     category = driver.find_element(
         "xpath",
         f"//*[@id='wrapwrap']/main/div[1]/div/div/div[1]/div[{categ_id}]/input",
@@ -43,35 +47,35 @@ for categ_id, product in PROD_SELECT.items():
     if not category.is_selected():
         category.click()
 
-    time.sleep(1)
+    time.sleep(SHORT_WAIT)
     select = Select(
         driver.find_element(
             "xpath",
             f"//*[@id='wrapwrap']/main/div[1]/div/div/div[1]/div[{categ_id}]/div/div/select",
         )
     )
-    time.sleep(1)
+    time.sleep(SHORT_WAIT)
     select.select_by_value(product)
 
 next_element = driver.find_element("xpath", "//*[@id='buttonSig']")
 next_element.click()
 
-time.sleep(2)
+time.sleep(SHORT_WAIT)
 pay_now_element = driver.find_element(
     "xpath", "//*[@id='wrap']/div[1]/div/div[2]/div/div/a[2]"
 )
-time.sleep(1)
+time.sleep(SHORT_WAIT)
 pay_now_element.click()
 
 # Fill form
 # User Personal Data
-time.sleep(3)
+time.sleep(MEDIUM_WAIT)
 ruts = chile_rut.random_ruts(2)
 driver.find_element("name", "vat").send_keys(ruts[0])
 driver.find_element("name", "name").send_keys(NAME)
 driver.find_element("name", "last_name").send_keys(NAME + " LastName")
 driver.find_element("name", "last_name_mother").send_keys(NAME + " MotherName")
-time.sleep(1)
+time.sleep(SHORT_WAIT)
 Select(
     driver.find_element(
         "xpath",
@@ -81,8 +85,10 @@ Select(
 driver.find_element("name", "street").send_keys(NAME + " Street")
 driver.find_element("name", "phone").send_keys("56224674996")
 driver.find_element("name", "mobile").send_keys("56224674996")
-driver.find_element("name", "email").send_keys(NAME + "@gmail.com")
-driver.find_element("name", "email_confirmation").send_keys(NAME + "@gmail.com")
+driver.find_element("name", "email").send_keys("jfedericogregori@gmail.com")
+driver.find_element("name", "email_confirmation").send_keys(
+    "jfedericogregori@gmail.com"
+)
 driver.find_element("name", "identification_card").send_keys("123456789")
 # Upload photocopy file
 field = driver.find_element("id", "attach_photocopy")
@@ -96,7 +102,7 @@ driver.find_element("name", "company_phone").send_keys("56224674996")
 driver.find_element("name", "company_l10n_cl_activity_description").send_keys(
     NAME + " Company Activity"
 )
-time.sleep(1)
+time.sleep(SHORT_WAIT)
 Select(
     driver.find_element(
         "xpath",
@@ -105,34 +111,35 @@ Select(
 ).select_by_value("Alhue")
 driver.find_element("name", "company_street").send_keys(NAME + " Street")
 driver.find_element("name", "company_l10n_cl_dte_email").send_keys(
-    NAME + "Company@gmail.com"
+    "jfedericogregori@gmail.com"
 )
 driver.find_element("name", "company_email_confirmation").send_keys(
-    NAME + "Company@gmail.com"
+    "jfedericogregori@gmail.com"
 )
 
 # Next button
 driver.find_element("id", "buttonNext").click()
-time.sleep(3)
+
 
 # Payment methods page
+time.sleep(MEDIUM_WAIT)
 driver.find_element(
     "xpath", "//*[@id='payment_method']/form/div[1]/div[3]/label/input"
 ).click()
 driver.find_element("xpath", "//*[@id='checkbox_tyc']").click()
-time.sleep(1)
+time.sleep(SHORT_WAIT)
 driver.find_element("id", "o_payment_form_pay").click()
 
 # Mercado Pago
-time.sleep(7)
+time.sleep(LONG_WAIT)
 driver.find_element("xpath", "//*[@id='group_form_scroller']").click()
-time.sleep(3)
+time.sleep(MEDIUM_WAIT)
 driver.find_element("id", "card_number").send_keys("5031755734530604")
 driver.find_element("id", "input_expiration_date").send_keys("1125")
 driver.find_element("id", "fullname").send_keys("APRO")
 driver.find_element("id", "cvv").send_keys("123")
-time.sleep(1)
+time.sleep(SHORT_WAIT)
 driver.find_element("id", "submit").click()
-time.sleep(4)
+time.sleep(MEDIUM_WAIT)
 # Document page
 driver.find_element("id", "number").send_keys("123456789")
