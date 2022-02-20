@@ -41,4 +41,7 @@ UPLOAD_FILE_ABSOLUTE_PATH: str = (
 -   PROD_SELECT: A Dict with the product category and the specified product to choose (to get the value is needed to inspect the options values from the selection input field).
 -   UPLOAD_FILE_ABSOLUTE_PATH: Absolute path of the file to be used as attached document in case of Electronic Invoice category product. The project includes a Nubox invoice pdf and the file uploaded has no constraints at the time of this project initial version.
 
-> The script starts a browser that goes until the previous to the last step of a new sale.
+
+> `Sometimes the RUT validations return invalid because of Odoo RUT validation logic, just restart the script.`
+
+-   The script starts a browser that goes until the user document id step of a new sale.
