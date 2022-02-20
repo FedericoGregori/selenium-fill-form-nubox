@@ -11,12 +11,12 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.common.exceptions import NoSuchElementException
 
-import chile_rut
+from utils import chile_rut
 from utils.timer import Timer
 
 _logger = logging.getLogger(__name__)
 
-PATH: str = "./chromedriver"
+PATH: str = "./utils/chromedriver"
 NAME: str = "Test"
 URL: str = "https://nubox-staging-4270885.dev.odoo.com/"
 # 1: Contabilidad
@@ -25,7 +25,7 @@ URL: str = "https://nubox-staging-4270885.dev.odoo.com/"
 # Values for the select are the same as the values in the dropdown, not the inside visible text
 PROD_SELECT: dict = {"1": "2311", "2": "2420"}
 UPLOAD_FILE_ABSOLUTE_PATH: str = (
-    "/Users/fede/workspace/selenium-fill-form-nubox/ING-_2022_0070.pdf"
+    "/Users/fede/workspace/selenium-fill-form-nubox/utils/ING-_2022_0070.pdf"
 )
 
 LONG_WAIT: int = 10
