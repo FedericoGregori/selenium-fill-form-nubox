@@ -18,7 +18,7 @@ _logger = logging.getLogger(__name__)
 
 PATH: str = "./utils/chromedriver"
 NAME: str = "Test"
-URL: str = "https://nubox-staging-4270885.dev.odoo.com/"
+URL: str = "https://nubox-staging-4290576.dev.odoo.com/"
 # 1: Contabilidad
 # 2: Factura Electrónica
 # 3: Remuneraciones
@@ -129,7 +129,8 @@ try:
         )
 
         driver.find_element("id", "buttonNext").click()
-
+        time.sleep(SHORT_WAIT)
+        driver.find_element("id", "buttonNext").click()
         # Retry RUTs
         time.sleep(SHORT_WAIT)
         try:
@@ -181,8 +182,8 @@ try:
         driver.find_element("xpath", "//*[@id='submit']").click()
 
         # Installments page
-        time.sleep(SHORT_WAIT + 1)
-        driver.find_element("xpath", "//*[@id='select_installments']/ul/li[1]").click()
+        # time.sleep(SHORT_WAIT + 1)
+        # driver.find_element("xpath", "//*[@id='select_installments']/ul/li[1]").click()
 
     # Finish message
     _logger.warning(
